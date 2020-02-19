@@ -1,0 +1,1954 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>${title}</title>
+    <style type="text/css">
+      #pageNumber:before {
+        content: "Page " counter(page) " of " counter(pages);
+      }
+      div.header {
+        display: block;
+        text-align: center;
+        position: running(header);
+      }
+      div.footer {
+        display: block;
+        text-align: center;
+        position: running(footer);
+      }
+      div.content {
+        page-break-before: always;
+      }
+      @page {
+        @top-center {
+          content: element(header);
+        }
+      }
+      @page {
+        @bottom-center {
+          content: element(footer);
+        }
+      }
+      @page {
+        margin-top: 28mm;
+        margin-bottom: 28mm;
+        margin-left: 14mm;
+        margin-right: 14mm;
+      }
+      .s1 {
+        color: #000000;
+        font-family: Arial, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 9pt;
+        text-align: justify;
+      }
+      .s2 {
+        color: #000000;
+        font-family: Arial, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 9pt;
+      }
+
+      .mine {
+        color: #000000;
+        font-family: Arial, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 8pt;
+        text-align: justify;
+      }
+      h1 {
+        color: #00000;
+        font-family: Arial, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 9pt;
+        text-align: center;
+      }
+      .s3 {
+        color: #fff;
+        font-family: Arial, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 9pt;
+      }
+      .s4 {
+        color: #000000;
+        font-family: Arial, sans-serif;
+        font-style: italic;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 9pt;
+      }
+      .s5 {
+        color: #000000;
+        font-family: Arial, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 11pt;
+        text-align: justify;
+      }
+      h2 {
+        color: #ee2e24;
+        font-family: Arial, sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 11pt;
+      }
+      p {
+        color: #777;
+        font-family: Arial, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 8pt;
+        margin: 0pt;
+      }
+      h3 {
+        color: #000000;
+        font-family: Arial, sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 11pt;
+      }
+      h4 {
+        color: #ee2e24;
+        font-family: Arial, sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 12pt;
+      }
+      li {
+        margin-bottom: 10px;
+        margin-top: 10px;
+      }
+      ol {
+        padding-left: 18px;
+      }
+      th {
+        border: 1px solid #000000;
+        text-align: center;
+        padding: 4px;
+      }
+      td {
+        border: 1px solid #000000;
+        text-align: left;
+        padding: 4px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .vertical_Text {
+        display: block;
+        color: #000000;
+        transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+      }
+      input[type="checkbox"] {
+        width: 15px;
+        height: 15px;
+      }
+      .border_none {
+        border: none !important;
+      }
+      .text_center {
+        text-align: center;
+      }
+      .text_left {
+        text-align: left;
+      }
+      .text_right {
+        text-align: right;
+      }
+      .width5 {
+        width: 14%;
+      }
+      .width5 {
+        width: 14%;
+      }
+      .width15 {
+        width: 15%;
+      }
+      .width20 {
+        width: 20%;
+      }
+      .width25 {
+        width: 25%;
+      }
+      .width30 {
+        width: 30%;
+      }
+      .width33 {
+        width: 33%;
+      }
+      .width34 {
+        width: 34%;
+      }
+      .width50 {
+        width: 50%;
+      }
+      .width60 {
+        width: 60%;
+      }
+      .width40 {
+        width: 40%;
+      }
+      .width45 {
+        width: 45%;
+      }
+      .width70 {
+        width: 70%;
+      }
+      .width80 {
+        width: 80%;
+      }
+      .width85 {
+        width: 85%;
+      }
+      .width95 {
+        width: 95%;
+      }
+      .width100 {
+        width: 100%;
+      }
+      .float_left {
+        float: left;
+      }
+      .width49 {
+        width: 49%;
+      }
+      .margin5px {
+        margin: 5px;
+      }
+      .section_line {
+        border: 1px solid #ee2e24;
+      }
+      .height23pt {
+        height: 23pt;
+      }
+      .section_line_black {
+        border: 0.5px solid #000000;
+      }
+      .height23pt {
+        height: 23pt;
+      }
+      .height18pt {
+        height: 18pt;
+      }
+      .hide {
+        display: none !important;
+      }
+      .z1 {
+        padding-left: 14pt;
+        text-indent: -4pt;
+        text-align: justify;
+      }
+      .z2 {
+        padding-left: 49pt;
+        text-indent: -6pt;
+        text-align: left;
+      }
+      .z3 {
+        padding-left: 28pt;
+        text-indent: -6pt;
+        text-align: left;
+      }
+      .text_underline {
+        text-decoration: underline;
+      }
+      .text_italic {
+        font-style: italic;
+      }
+      .footer_content {
+        border-top: 1px solid red;
+        color: #999999;
+      }
+      .ml10px {
+        margin-left: 10px;
+      }
+      .m20px {
+        margin: 20px;
+      }
+      p.round3 {
+        border: 1px solid red;
+      }
+      .a {
+        text-indent: 50px;
+      }
+      ul.a {
+        list-style-type: circle;
+      }
+      ul.b {
+        list-style-type: square;
+      }
+      ol.c {
+        list-style-type: upper-roman;
+      }
+      ol.d {
+        list-style-type: lower-alpha;
+      }
+      ol.e {
+        list-style-type: upper-alpha;
+      }
+      ol.f {
+        list-style-type: lower-roman;
+      }
+
+      ol.x {
+        padding-left: 20px;
+      }
+      ol.five {
+        counter-reset: item 4;
+      }
+      .table-color {
+        border: 1px solid red;
+      }
+      .table-border {
+        border-collapse: collapse;
+      }
+      .table-td {
+        text-align: left;
+        padding: 0px;
+        word-wrap: break-word;
+      }
+      .sa1 {
+        font-family: Arial, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 9pt;
+      }
+      .bold1 {
+        font-weight: bold;
+      }
+      .italic1 {
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <!--page 1-->
+    <div class="header">
+      <table>
+        <tr>
+          <td class="border_none text_center width15" valign="center">
+            <img src="${header_logo}" alt="" width="150" height="75" />
+          </td>
+          <td class="border_none text_center width85" valign="center">
+            <h4>${indonesia_deal_heading}</h4>
+          </td>
+        </tr>
+      </table>
+
+      <div class="section_line" style="margin-bottom:5px;"></div>
+    </div>
+    <br />
+    <div class="text_center">
+      <h1>${indo_abstract_heading}</h1>
+    </div>
+    <!--Footer-->
+    <div class="footer footer_content">
+      <p class="s2 margin5px">
+        ${footer_content_1}
+
+        <b>${created_at}</b> ${footer_content_2}
+
+        <b>${property_owner_name}</b> ${footer_content_3}
+
+        <b>${owner_email}</b> ${footer_content_4}
+
+        <b>${owner_phone}</b> ${footer_content_5}
+
+        <b>${owner_accepted_date}</b>
+      </p>
+      <p class="s2 margin5px" id="pageNumber"></p>
+    </div>
+    <!--content-->
+    <div>
+      <p class="s1">
+        ${indo_abstract_1a} ${signing_date} ${indo_abstract_1b} ${property_name}
+        ${indo_abstract_1c} ${property_address}${indo_abstract_1d} ${owner_name}
+        ${indo_abstract_1d}
+      </p>
+    </div>
+    <br />
+
+    <ol>
+      <li>
+        <p class="s1">${indo1.1_ordered_list_1}</p>
+
+        <br />
+        <ol class="f">
+          <li>
+            <p class="s1">${indo1.2_ordered_list_1_i}</p>
+          </li>
+          <li>
+            <p class="s1">${indo1.3_ordered_list_1_ii}</p>
+            <ol class="d">
+              <li>
+                <p class="s1">${indo1.4_ordered_list_1_ii_a}</p>
+              </li>
+              <li>
+                <p class="s1">${indo1.5_ordered_list_1_ii_b}</p>
+              </li>
+              <li>
+                <p class="s1">${indo1.6_ordered_list_1_ii_c}</p>
+              </li>
+              <li>
+                <p class="s1">${indo1.7_ordered_list_1_ii_d}</p>
+              </li>
+              <li>
+                <p class="s1">${indo1.8_ordered_list_1_ii_e}</p>
+              </li>
+            </ol>
+          </li>
+
+          <p class="s1">${indo1.9_ordered_list_1_subhead}</p>
+
+          <li>
+            <p class="s1">${indo1.10_ordered_list_1_iii}</p>
+          </li>
+
+          <br />
+          <p class="mine">${indo1.11_ordered_list_1_subhead}</p>
+
+          <li>
+            <p class="mine">${indo1.12_ordered_list_1_iv}</p>
+          </li>
+        </ol>
+      </li>
+
+      <li>
+        <p class="mine">
+          ${indo1.13_ordered_list_2_first} ${duration_in_months}
+          ${indo1.14_ordered_list_2_second}
+        </p>
+      </li>
+      <li>
+        <!--doubt in unknown not specified-->
+        <p class="mine">
+          ${indo1.16_ordered_list_3_first} ${property_lockin}
+          ${indo1.17_ordered_list_3_second}
+        </p>
+        <br />
+        <br />
+      </li>
+
+      <li>
+        <p class="mine">${indo1.18_ordered_list_4}</p>
+        <!--Page 2 starts-->
+        <p class="s1">${indo2.1_paragraph}</p>
+        <p class="s1">${indo2.2_paragraph}</p>
+        <br />
+      </li>
+      <li>
+        <p class="mine">${indo2.3_ordered_list_5}</p>
+        <br />
+      </li>
+      <li>
+        <p class="mine">${indo2.4_ordered_list_6}</p>
+        <br />
+      </li>
+      <li>
+        <p class="mine">${indo2.5_ordered_list_7}</p>
+        <br />
+      </li>
+      <li>
+        <p class="mine">${indo2.6_ordered_list_8}</p>
+        <br />
+      </li>
+      <li>
+        <p class="mine">${indo2.7_ordered_list_9}</p>
+        <br />
+      </li>
+      <li>
+        <p class="mine">${indo2.8_ordered_list_10}</p>
+
+        <ol class="f">
+          <li>
+            <p class="mine">${indo2.9_ordered_list_10_i}</p>
+            <br />
+          </li>
+          <li>
+            <p class="mine">${indo2.10_ordered_list_10_ii}</p>
+            <br />
+          </li>
+          <li>
+            <p class="mine">${indo2.11_ordered_list_10_iii}</p>
+            <br />
+          </li>
+          <li>
+            <p class="mine">${indo2.12_ordered_list_10_iv}</p>
+            <br />
+          </li>
+          <li>
+            <p class="mine">${indo2.13_ordered_list_10_v}</p>
+            <br />
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p class="mine">${indo2.14_ordered_list_11}</p>
+        <br />
+      </li>
+      <!--this item is to made invisible??how??-->
+      <li class="${oyo_tr_exp_visible}">
+        <p class="mine">${indo2.15_ordered_list_12}</p>
+        <!--page 3 starts here-->
+        <ol class="f">
+          <li>
+            <p class="mine">${indo3.1_ordered_list_12_i}</p>
+          </li>
+          <li>
+            <p class="s1">${indo3.2_ordered_list_12_ii}</p>
+          </li>
+          <li>
+            <p class="s1">${indo3.3_ordered_list_12_iii}</p>
+          </li>
+          <li>
+            <p class="s1">${indo3.4_ordered_list_12_iv}</p>
+          </li>
+        </ol>
+      </li>
+
+      <li>
+        <p class="mine">${indo3.5_ordered_list_13}</p>
+
+        <ol class="f">
+          <li>
+            <p class="s1">${indo3.6_ordered_list_13_i}</p>
+          </li>
+
+          <li>
+            <p class="s1">${indo3.7_ordered_list_13_ii}</p>
+          </li>
+          <li>
+            <p class="s1">${indo3.8_ordered_list_13_iii}</p>
+          </li>
+          <li>
+            <p class="s1">${indo3.9_ordered_list_13_iv}</p>
+          </li>
+          <li>
+            <p class="s1">${indo3.10_ordered_list_13_v}</p>
+          </li>
+
+          <li>
+            <p class="s1">${indo3.11_ordered_list_13_vi}</p>
+          </li>
+          <li>
+            <p class="s1">${indo3.12_ordered_list_13_vii}</p>
+          </li>
+          <li>
+            <p class="s1">${indo3.13_ordered_list_13_viii}</p>
+          </li>
+        </ol>
+        <p class="s1">${indo3.14_ordered_list_13_endpara}</p>
+      </li>
+      <li>
+        <p class="s1">${indo3.15_ordered_list_14}</p>
+        <br />
+        <br />
+      </li>
+    </ol>
+
+    <!--Page 4 starts here-->
+    <br />
+    <div class="text_center">
+      <h1>${indo4.1_heading1}</h1>
+    </div>
+
+    <div class="text_center">
+      <h1>${indo4.2_heading2}</h1>
+    </div>
+    <br />
+
+    <div>
+      <table>
+        <tr>
+          <td class="width50">
+            <table>
+              <tr>
+                <td class="border_none width30">
+                  <p class="s1">${indo4.3_table1_r1_c1_a}</p>
+                  <p class="s1">${indo4.4_table1_r1_c1_b}</p>
+                </td>
+                <td class="border_none">
+                  <p class="s1">${property_name}</p>
+                </td>
+              </tr>
+            </table>
+
+            <!--<p class="s1">${indo4.3_table1_r1_c1_a} ${property_name}</p>
+            <p class="s1">${indo4.4_table1_r1_c1_b}</p>
+            -->
+          </td>
+          <td class="widht50">
+            <table>
+              <tr>
+                <td class="border_none width20">
+                  <p class="s1">${indo4.5_table1_r1_c2_a}</p>
+                  <p class="s1">${indo4.6_table1_r1_c2_b}</p>
+                </td>
+                <td class="border_none">
+                  <p class="s1">${signing_date}</p>
+                </td>
+              </tr>
+            </table>
+
+            <!--
+            <p class="s1">${indo4.5_table1_r1_c2_a} ${signing_date}</p>
+            <p class="s1">${indo4.6_table1_r1_c2_b}</p>
+            -->
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table>
+              <tr>
+                <td class="border_none width45">
+                  <p class="s1">${indo4.7_table1_r2_c1_a}</p>
+                  <p class="s1">${indo4.8_table1_r2_c1_b}</p>
+                </td>
+                <td class="border_none">
+                  <p class="s1">${total_rooms}</p>
+                </td>
+              </tr>
+            </table>
+
+            <!--
+            <p class="s1">${indo4.7_table1_r2_c1_a} ${total_rooms}</p>
+            <p class="s1">${indo4.8_table1_r2_c1_b}</p>
+            -->
+          </td>
+          <td>
+            <table>
+              <tr>
+                <td class="border_none width30">
+                  <p class="s1">${indo4.8_table1_r2_c2_a}</p>
+                  <p class="s1">${indo4.9_table1_r2_c2_b}</p>
+                </td>
+                <td class="border_none">
+                  <p class="s1">${owner_name}</p>
+                </td>
+              </tr>
+            </table>
+
+            <!--
+            <p class="s1">${indo4.8_table1_r2_c2_a} ${owner_name}</p>
+            <p class="s1">${indo4.9_table1_r2_c2_b}</p>
+              -->
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <!--unknown variable not known yet-->
+            <table>
+              <tr>
+                <td class="border_none width20">
+                  <p class="s1">${indo4.10_table1_r3_c1_a}</p>
+                  <p class="s1">${indo4.11_table1_r3_c1_b}</p>
+                </td>
+                <td class="border_none">
+                  <p class="s1">${cluster}</p>
+                </td>
+              </tr>
+            </table>
+
+            <!-- <p class="s1">${indo4.10_table1_r3_c1_a} ${unknown}</p>
+            <p class="s1">${indo4.11_table1_r3_c1_b}</p>
+            -->
+          </td>
+          <td>
+            <table>
+              <tr>
+                <td class="border_none">
+                  <p class="s1">${indo4.12_table1_r3_c2_a}</p>
+                  <p class="s1">${indo4.13_table1_r3_c2_b}</p>
+                </td>
+                <td class="border_none">
+                  <p class="s1">${property_address}</p>
+                </td>
+              </tr>
+            </table>
+
+            <!-- <p class="s1">${indo4.12_table1_r3_c2_a} ${property_address}</p>
+            <p class="s1">${indo4.13_table1_r3_c2_b}</p>
+            -->
+          </td>
+        </tr>
+      </table>
+    </div>
+    <br />
+    <br />
+    <!--table 2-->
+    <div>
+      <table>
+        <tr style="background-color: red;">
+          <td colspan="5" style="color: white;">
+            <p class="s1" style="color: white;">
+              ${indo4.14_table2_r1_head_eng}
+            </p>
+            <p class="s1" style="color: white;">
+              ${indo4.15_table2_r1_head_indo}
+            </p>
+          </td>
+        </tr>
+        <!--row 2-->
+        <tr>
+          <td>
+            <p class="s1">${indo4.16_table2_r2_c1_eng}</p>
+            <p class="s1">${indo4.17_table2_r2_c1_indo}</p>
+          </td>
+          <td>
+            <p class="s1">${indo4.18_table2_r2_c2_eng}</p>
+            <p class="s1">${indo4.19_table2_r2_c2_indo}</p>
+          </td>
+          <td>
+            <p class="s1">${indo4.20_table2_r2_c3_eng}</p>
+            <p class="s1">${indo4.21_table2_r2_c3_indo}</p>
+          </td>
+          <td>
+            <p class="s1">${indo4.22_table2_r2_c4_eng}</p>
+          </td>
+          <td>
+            <p class="s1">${indo4.23_table2_r2_c5_eng}</p>
+            <p class="s1">${indo4.24_table2_r2_c5_indo}</p>
+          </td>
+        </tr>
+        <!--row 3-->
+        <!-- whole row data is not available-->
+        <tr>
+          <td>
+            <p class="s1">${no_of_rooms}</p>
+          </td>
+          <td>
+            <p class="s1">${meal_plan}</p>
+          </td>
+          <td>
+            <p class="s1">${in_room_fnb}</p>
+          </td>
+          <td>
+            <p class="s1">${mice}</p>
+          </td>
+          <td>
+            <p class="s1">${restaurant}</p>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <!--Page 5 starts here-->
+
+    <h1 style="text-align: center;">${indo5.1_head1}</h1>
+
+    <h1 style="text-align: center;">${indo5.2_head2}</h1>
+    <br />
+
+    <!--table 1-->
+    <div>
+      <table>
+        <!--row 1 heading-->
+        <tr style="background-color: red; ">
+          <td>
+            <p class="s1" style="color: white;">${indo5.3_table1_r1_c1_head}</p>
+          </td>
+          <td>
+            <p class="s1" style="color: white;">${indo5.4_table1_r1_c2_head}</p>
+          </td>
+        </tr>
+        <!--row 2 heading-->
+        <tr style="background-color: red; color: white;">
+          <td>
+            <p class="s1" style="color: white;">${indo5.5_table1_r2_c1_head}</p>
+          </td>
+          <td>
+            <p class="s1" style="color: white;"><b>${indo5.6_table1_r2_c2_head}</b></p>
+          </td>
+        </tr>
+        <!--row 3 main content row-->
+
+        <tr>
+          <td>
+            <p class="s1">${indo5.7_table1_r3_c1_eng}</p>
+            <p class="s1">${indo5.8_table1_r3_c1_indo}</p>
+          </td>
+          <td>
+            <p class="s1">${total_rooms}</p>
+          </td>
+        </tr>
+
+        <!--row 4-->
+        <tr>
+          <td>
+            <p class="s1">${indo5.9_table1_r4_c1_eng}</p>
+            <p class="s1">${indo5.10_table1_r4_c1_indo}</p>
+          </td>
+          <td>
+            <p class="s1">${black_nonsellable}</p>
+          </td>
+        </tr>
+        <!--row 5-->
+        <tr>
+          <td>
+            <p class="s1">${indo5.11_table1_r5_c1_eng}</p>
+            <p class="s1">${indo5.12_table1_r5_c1_indo}</p>
+          </td>
+          <td>
+            <p class="s1">${no_of_rooms}</p>
+          </td>
+        </tr>
+
+        <!--row 6-->
+        <tr>
+          <td>
+            <p class="s1">${indo5.13_table1_r6_c1_eng}</p>
+            <p class="s1">${indo5.14_table1_r6_c1_indo}</p>
+          </td>
+          <td>
+            <!--row 6 col2 have to do calculation contracted-black_sellable -->
+            <p class="s1">${valid_rooms}</p>
+          </td>
+        </tr>
+
+        <!--row 9-->
+        <!--
+        <tr>
+          <td>
+            <p class="s1">${indo5.19_table1_r9_c1_eng}</p>
+            <p class="s1">${indo5.20_table1_r9_c1_indo}</p>
+          </td>
+          <td>
+            <p class="s1">${oyo_tr_expenditure}</p>
+          </td>
+        </tr>
+        -->
+      </table>
+    </div>
+
+    <!--heading 3-->
+    <h1 style="text-align: center;">${indo5.21_head3}</h1>
+    <br />
+
+    <p class="s1">${indo5.22_paragraph1}</p>
+    <p class="s1">${indo5.23_paragraph2}</p>
+    <br />
+    <!--table2 dynamic-->
+
+    <table>
+      ${mgTable}
+    </table>
+    <br />
+
+    <!--table3-->
+    <div>
+      <table>
+        <tr style="background-color: red;">
+          <td class="table-color">
+            <p class="s1" style="text-align: center; color: white;">
+              ${indo5.24_table3_heading}
+            </p>
+          </td>
+        </tr>
+        <!--row 1-->
+        <tr>
+          <td class="table-color">
+            <p class="s1">${indo5.25_table3_r1_v1}</p>
+            <p class="s1">${indo5.26_table3_r1_v2}</p>
+          </td>
+        </tr>
+        <!--row 2-->
+        <tr>
+          <td class="table-color">
+            <p class="s1">${indo5.27_table3_r2_v1}</p>
+            <p class="s1">${indo5.28_table3_r2_v2}</p>
+            <p class="s1">${indo5.29_table3_r2_v3}</p>
+            <p class="s1">${indo5.30_table3_r2_v4}</p>
+          </td>
+        </tr>
+        <!--row 3-->
+
+        <tr>
+          <td class="table-color">
+            <p class="s1">${indo5.31_table3_r3_v1}</p>
+            <p class="s1">${indo5.32_table3_r3_v2}</p>
+            <p class="s1">${indo5.33_table3_r3_v3}</p>
+            <p class="s1">${indo5.34_table3_r3_v4}</p>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <!--Page 6 starts here-->
+    <div>
+      <table>
+        <tr style="background-color: red;">
+          <td class="table-color">
+            <p class="s1 text_center" style="color: white;">
+              <b
+                >${indo6.1_table1_r1_c1_head_eng}${indo6.2_table1_r1_c1_head_indo}</b
+              >
+            </p>
+          </td>
+          <td class="table-color" style="color: white;">
+            <p class="s1 text_center" style="color: white;">
+              <b
+                >${indo6.3_table1_r1_c2_head_eng}${indo6.4_table1_r1_c2_head_indo}</b
+              >
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="table-color">
+            <p class="s1">
+              ${indo6.5_table1_r2_c1_v1} ${indo6.6_table1_r2_c1_v2}
+            </p>
+          </td>
+
+          <td class="table-color">
+            <!--variable name doubt-->
+            <p class="s1">${duration_in_months} Months</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="table-color">
+            <p class="s1">
+              ${indo6.7_table1_r3_c1_v1} ${indo6.8_table1_r3_c1_v2}
+            </p>
+          </td>
+
+          <td class="table-color">
+            <!--variable name doubt-->
+            <p class="s1">${property_lockin} Months</p>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <br />
+    <br />
+    <!--new content whole section to be visible if MG>0-->
+    <div class="${hide_mg_condition}">
+      <h1 class="text_left">
+        <b>${indo6.46_heading_eng}${indo6.47_heading_indo}</b>
+      </h1>
+      <p class="s1">${indo6.48_para1_eng}</p>
+      <br />
+      <p class="s1">${indo6.49_para1_indo}</p>
+      <br />
+      <div>
+        <table>
+          <!--header row-->
+          <!--
+            <tr style="background-color: red;">
+                <td class="width50">
+                    <p class="s1">${indo6.50_table_r0_c1_head}</p>
+                </td>
+                <td class="width50">
+                    <p class="s1">${indo6.51_table_r0_c2_head}</p>
+                </td>
+            </tr>
+            -->
+          <!--row 1-->
+          <!--
+            <tr>
+                <td>
+                    <p class="s1">${indo6.52_table_r1_c1}</p>
+                </td>
+                <td>
+                    <p class="s1">0%</p>
+                </td>
+            </tr>
+            -->
+          <!--row 2-->
+          <!--
+            <tr>
+                <td>
+                    <p class="s1">${indo6.53_table_r2_c1}</p>
+                </td>
+                <td>
+                    <p class="s1">100%</p>
+                </td>
+            </tr>
+            -->
+          ${mgCoolOff}
+        </table>
+      </div>
+      <br />
+
+      <!-- table ii in new content-->
+      <div>
+        <table>
+          ${mgTable2}
+        </table>
+      </div>
+    </div>
+    <br />
+    <!--table2 heading-->
+    <div class="text_center">
+      <h1>${indo6.9_head1_eng} ${indo6.10_head1_indo}</h1>
+    </div>
+    <br />
+
+    <!--table2-->
+    <div>
+      <table>
+        <tr style="background-color: red;">
+          <td class="width50" style="color: white;">
+            <p class="s1" style="color: white;">
+              <b
+                >${indo6.1_table1_r1_c1_head_eng}
+                ${indo6.2_table1_r1_c1_head_indo}</b
+              >
+            </p>
+          </td>
+          <td class="width50" style="color: white;">
+            <p class="s1" style="color: white;">
+              <b>${indo6.11_table2_r1_c2_head_eng}</b>
+            </p>
+            <p class="s1" style="color: white;">
+              <b>${indo6.12_table2_r1_c2_head_indo}</b>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="s1">${indo6.13_table2_r2_c1_eng}</p>
+            <p class="s1">${indo6.14_table2_r2_c1_indo}</p>
+          </td>
+          <td><p class="s1">${softlive_date}</p></td>
+        </tr>
+        <tr>
+          <td>
+            <p class="s1">${indo6.15_table2_r3_c1_eng}</p>
+            <p class="s1">${indo6.16_table2_r3_c1_indo}</p>
+          </td>
+          <td><p class="s1">${hardlive_date}</p></td>
+        </tr>
+      </table>
+    </div>
+    <br />
+    <br />
+
+    <!-- new dynamic table 2-->
+
+    <h1 class="text_center">${waiver_table_head}</h1>
+    <div>
+      <table>
+        ${yearly_waiver1}
+      </table>
+      <br />
+      <br />
+      <table>
+        ${yearly_waiver2}
+      </table>
+      <br />
+      <br />
+    </div>
+    <!--table3 heading-->
+    <div class="text_center">
+      <h1>${indo6.17_head2_eng} ${indo6.18_head2_indo}</h1>
+    </div>
+    <br />
+
+    <!--table 3-->
+    <div>
+      <table>
+        <tr style="background-color: red;">
+          <td style="color: white;">
+            <p class="s1" style="color: white;">
+              ${indo6.19_table3_r1_c1_head_eng}
+            </p>
+            <p class="s1" style="color: white;">
+              ${indo6.20_table3_r1_c1_head_indo}
+            </p>
+          </td>
+          <td style="color: white;">
+            <p class="s1" style="color: white;">
+              ${indo6.21_table3_r1_c2_head_eng}
+            </p>
+            <p class="s1" style="color: white;">
+              ${indo6.22_table3_r1_c2_head_indo}
+            </p>
+          </td>
+        </tr>
+        <!--
+        <tr>
+          <td>
+            <p class="s1">${indo6.23_table3_r2_c1_v1_eng}</p>
+            <p class="s1">${indo6.24_table3_r2_c1_v2_eng}</p>
+            <p class="s1">${indo6.25_table3_r2_c1_v3_eng}</p>
+            <p class="s1">${indo6.26_table3_r2_c1_v4_indo}</p>
+            <p class="s1">${indo6.27_table3_r2_c1_v5_indo}</p>
+            <p class="s1">${indo6.28_table3_r2_c1_v6_indo}</p>
+          </td>
+          <td>
+            <p class="s1">${migration_waiver}</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="s1">${indo6.29_table3_r3_c1_v1_eng}</p>
+            <p class="s1">${indo6.30_table3_r3_c1_v2_indo}</p>
+            <p class="s1">${indo6.31_table3_r3_c1_v3_indo}</p>
+          </td>
+          <td>
+            <p class="s1">${ota_waiver}</p>
+          </td>
+        </tr>
+        -->
+        <!--  <tr>
+          <td>
+            <p class="s1">${indo6.32_table3_r4_c1_v1_eng}</p>
+            <p class="s1">${indo6.33_table3_r4_c1_v2_indo}</p>
+          </td>
+
+          <td>
+          -->
+        <!--row 4 col2 unknown not known-->
+        <!--
+            <p class="s1">${unkown}</p>
+          </td>
+        </tr>
+    -->
+
+        <!--row 5-->
+        <tr>
+          <td>
+            <p class="s1">${indo6.34_table3_r5_c1_v1_eng}</p>
+            <p class="s1">${indo6.35_table3_r5_c1_v2_indo}</p>
+          </td>
+          <td>
+            <p class="s1">${in_room_fnb}</p>
+          </td>
+        </tr>
+        <!--row 6-->
+        <tr>
+          <td>
+            <p class="s1">${indo6.36_table3_r6_c1_v1_eng}</p>
+            <p class="s1">${indo6.37_table3_r6_c1_v2_indo}</p>
+          </td>
+          <td>
+            <!--row 6 col 2 value not known-->
+            <p class="s1">${mice}</p>
+          </td>
+        </tr>
+
+        <!--row 7-->
+        <tr>
+          <td>
+            <p class="s1">${indo6.38_table3_r7_c1_v1_eng}</p>
+            <p class="s1">${indo6.39_table3_r7_c1_v2_indo}</p>
+          </td>
+          <td>
+            <!--row 7 col 2 not known-->
+            <p class="s1">${restaurant}</p>
+          </td>
+        </tr>
+        <!--row 8-->
+        <tr>
+          <td>
+            <p class="s1">${indo6.40_table3_r8_c1_v1_eng}</p>
+            <p class="s1">${indo6.41_table3_r8_c1_v2_indo}</p>
+          </td>
+          <td>
+            <!--row 8 col 2 value not known-->
+            <p class="s1">${meal_plan}</p>
+          </td>
+        </tr>
+        <!--row 9-->
+
+        <tr>
+          <td>
+            <p class="s1">${indo6.42_table3_r9_c1_v1_eng}</p>
+            <p class="s1">${indo6.43_table3_r9_c1_v2_indo}</p>
+          </td>
+          <td>
+            <!--row 9 col 2 value knot known-->
+            <p class="s1">${meal_plan}</p>
+          </td>
+        </tr>
+        <!--row 10-->
+
+        <tr>
+          <td>
+            <p class="s1">${indo6.44_table3_r10_c1_v1_eng}</p>
+            <p class="s1">${indo6.45_table3_r10_c1_v2_indo}</p>
+          </td>
+          <td>
+            <!--row 10 col 2 value not known-->
+            <p class="s1">${meal_plan}</p>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <br />
+
+    <!--Page 7 starts here-->
+
+    <div class="text_center">
+      <h1>${indo7.1_head1_eng} ${indo7.2_head1_indo}</h1>
+    </div>
+    <!--table 1-->
+    <div>
+      <table>
+        <tr style="background-color: red;">
+          <td>
+            <p class="s1" style="color: white;">
+              ${indo7.3_table1_r1_c1_head_eng}
+            </p>
+            <p class="s1" style="color: white;">
+              ${indo7.4_table1_r1_c1_head_indo}
+            </p>
+          </td>
+          <td>
+            <p class="s1" style="color: white;">
+              ${indo7.5_table1_r1_c2_head_eng}
+            </p>
+            <p class="s1" style="color: white;">
+              ${indo7.6_table1_r1_c2_head_indo}
+            </p>
+          </td>
+        </tr>
+        <!--row 2-->
+        <tr>
+          <td>
+            <p class="s1">${indo7.7_table1_r2_c1_v1}</p>
+          </td>
+          <td>
+            <p class="s1">${indo7.8_table1_r2_c2_v1}</p>
+          </td>
+        </tr>
+        <!--row 3-->
+        <tr>
+          <td>
+            <p class="s1">${indo7.9_table1_r3_c1_v1_eng}</p>
+            <p class="s1">${indo7.10_table1_r3_c1_v2_indo}</p>
+          </td>
+          <td>
+            <p class="s1">${indo7.11_table1_r3_c2_v1}</p>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <br />
+
+    <!--to be made visible under certain condition-->
+    <div class="${capex_info}">
+      <div class="text_center ">
+        <h1>${indo7.12_head2}</h1>
+      </div>
+      <!--table 2-->
+      <div>
+        <table>
+          <tr style="background-color: red;">
+            <td class="width50" style="color: white;">
+              <p class="s1 text_center" style="color: white;">
+                ${indo7.13_table2_r1_c1_head_eng}
+              </p>
+              <p class="s1 text_center" style="color: white;">
+                ${indo7.14_table2_r1_c1_head_indo}
+              </p>
+            </td>
+            <td class="width50" style="color: white;">
+              <p class="s1 text_center" style="color: white;">
+                ${indo7.15_table2_r1_c2_head_eng}
+              </p>
+              <p class="s1 text_center" style="color: white;">
+                ${indo7.16_table2_r1_c2_head_indo}
+              </p>
+            </td>
+          </tr>
+          <!--row 2-->
+          <tr>
+            <td class="width50">
+              <p class="s1">${indo7.17_table2_r2_c1_v1}</p>
+              <p class="s1">${indo7.18_table2_r2_c1_v2}</p>
+            </td>
+            <td class="width50">
+              <p class="s1">${oyo_tr_expenditure}</p>
+            </td>
+          </tr>
+          <!--row 3-->
+
+          <tr class="${show_emi}">
+            <td class="width50">
+              <p class="s1">${indo7.19_table2_r3_c1_v1}</p>
+            </td>
+
+            <td class="width50">
+              <!--row 3 col 2 not known-->
+              <p class="s1">${mode_of_recovery}</p>
+            </td>
+          </tr>
+          <!--row 4-->
+          <tr class="${signing_bonus} ${show_emi}">
+            <td class="width50">
+              <p class="s1">${indo7.20_table2_r4_c1_v1}</p>
+            </td>
+            <td class="width50">
+              <!--row 4 col 2 visibility issue-->
+              <p class="s1">${num_of_months} Months</p>
+            </td>
+          </tr>
+          <!--row 5-->
+          <tr class="${show_emi}">
+            <!--row 5 only present if certain condition satisfies-->
+            <td class="width50">
+              <p class="s1">${indo7.21_table2_r5_c1_v1}</p>
+            </td>
+            <td class="width50">
+              <!--row 5 col 2 variable name not defined properly-->
+              <p class="s1">${cost_of_capital}</p>
+            </td>
+          </tr>
+          <!--row 6-->
+          <tr class="${show_emi}">
+            <!--only present if certain condiation satisfies-->
+            <td class="width50">
+              <p class="s1">${indo7.22_table2_r6_c1_v1}</p>
+            </td>
+            <td class="width50">
+              <!--row 6 col 2 variable name not defined properly -->
+              <p class="s1">${recovery_investment}</p>
+            </td>
+          </tr>
+
+          <!--row 7-->
+          <tr class="${show_rs}">
+            <!-- row 7 only visible if if recovery mode is incremental-->
+            <td class="width50">
+              <p class="s1">${indo7.23_table2_r7_c1_v1}</p>
+              <p class="s1">${indo7.24_table2_r7_c1_v2}</p>
+            </td>
+            <td class="width50">
+              <!--row 7 col 2 varible not known-->
+              <p class="s1">${incremental_rs}</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <br />
+
+    <!--heading 3-->
+    <!--
+    <h1 style="text-align: center;">${indo7.25_head3}</h1>
+    -->
+    <!--table 3-->
+    <!--
+    <div>
+      <table>
+        <tr style="background-color: red;">
+          <td class="width50">
+            <p class="s1 text_center">${indo7.26_table3_r1_c1_head_eng}</p>
+            <p class="s1 text_center">${indo7.27_table3_r1_c1_head_indo}</p>
+          </td>
+          <td class="width50">
+            <p class="s1 text_center">${indo7.28_table3_r1_c2_head_eng}</p>
+            <p class="s1 text_center">${indo7.29_table3_r1_c2_head_indo}</p>
+          </td>
+        </tr>
+    -->
+    <!--row 2-->
+    <!--
+
+        <tr>
+          <td>
+            <p class="s1">${indo7.30_table3_r2_c1_v1}</p>
+          </td>
+          <td>
+              -->
+    <!--row 2 col 2 variable name not specified properly-->
+    <!--
+            <p class="s1">${Total Investment Amount}</p>
+          </td>
+        </tr>
+      </table>
+    </div>>
+-->
+    <br />
+    <br />
+
+    <!--=Page 8 starts here-->
+
+    <p class="s1">${indo8.1_heading}</p>
+    <br />
+    <br />
+
+    <p class="s1">${indo8.2_paragraph}</p>
+    <br />
+    <ol class="f" style="padding-left: 25px;">
+      <!--This item is to made visible only in certain condition-->
+      <li class="${hide_mg_condition}">
+        <p class="s1">${indo8.3_ordered_list_i}</p>
+      </li>
+      <!--This item fee change and description is still pending-->
+      <!--
+      <li>
+        <p class="s1">${indo8.4_ordered_list_ii}</p>
+        <br/>
+        <p class="s1">${indo8.5_ordered_list_ii_ii}</p>
+      </li>
+      -->
+
+      <!--this item oyo distribution fee and add description-->
+      <!--
+      <li>
+        <p class="s1">${indo8.6_ordered_list_iii}</p>
+        <br/>
+        <p class="s1">${indo8.7_ordered_list_iii_iii}</p>
+      </li>
+     -->
+      <!--
+      <li>
+        <p class="s1">${indo8.8_ordered_list_iv}</p>
+      </li>
+      -->
+      <!--
+      <li>
+        <p class="s1">${indo8.9_ordered_list_v}</p>
+      </li>
+      -->
+      <li>
+        <p class="s1">${indo8.10_ordered_list_vi}</p>
+      </li>
+      <!--Page 9 starts-->
+      <li>
+        <p class="s1">${indo9.1_ordered_list_vii}</p>
+      </li>
+      <li>
+        <p class="s1">${indo9.2_ordered_list_viii}</p>
+      </li>
+      <!--this is to be made visible if assured benchmark revenue >0-->
+      <li class="${hide_mg_condition}">
+        <p class="s1">${indo9.3_ordered_list_ix}</p>
+      </li>
+      <li>
+        <p class="s1">${indo9.4_ordered_list_x}</p>
+      </li>
+      <li>
+        <p class="s1">${indo9.5_ordered_list_xi}</p>
+      </li>
+    </ol>
+    <br />
+    <br />
+
+    <!--page 10 starts here(sahil)-->
+
+    <div class="sa1">
+      <p class="s1" style="text-align: center;">
+        <b>${indo10.1_heading}</b>
+        <br />
+        <br />
+        <b><u>${indo10.2_heading}</u></b>
+      </p>
+      <br />
+      <p class="s1">
+        <i
+          >${indo10.3_paragraph}${start_date}${indo10.4_paragraph}${owner_name}${indo10.5_paragraph}${property_address}${indo10.6_paragraph}${$owner_name}${indo10.7_paragraph}</i
+        >
+      </p>
+      <br />
+      <p class="s1">
+        <i>
+          ${indo10.8_paragraph}
+        </i>
+      </p>
+      <br />
+      <ol type="a" style="font-size: 9pt;">
+        <li><i>${indo10.9_ol1}</i></li>
+        <li><i>${indo10.9_ol2} </i></li>
+        <li><i>${indo10.9_ol3}</i></li>
+        <li><i>${indo10.9_ol4}</i></li>
+        <li><i>${indo10.9_ol5}</i></li>
+        <li><i>${indo10.9_ol6}</i></li>
+      </ol>
+      <p class="s1">
+        <i>${indo10.10_paragraph}</i>
+      </p>
+      <ol type="a" style="font-size: 9pt;" class="italic1">
+        <li>${indo10.11_ol1}</li>
+        <li>${indo10.11_ol2}</li>
+        <li>${indo10.11_ol3}</li>
+      </ol>
+    </div>
+    <p class="s1"><b>${indo10_table_heading}</b></p>
+    <br />
+    <table style="font-size: 9pt;">
+      <tr style="background-color: red;">
+        <th style="color: white;">
+          <b>${indo10_table1.1}<br /><i>${indo10_table1.2}</i></b>
+        </th>
+        <th style="color: white;">
+          <b>${indo10_table1.3}</b>
+        </th>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+    <br />
+    <br />
+
+    <!-- page 11 -->
+
+    <div class="s1">
+      <p class="s1" style="text-align: center;">
+        <b
+          ><u>${indo11.1_heading}<br /><br />${indo11.2._heading}</u></b
+        >
+      </p>
+      <br />
+      <ol type="1" style="font-size: 9pt;">
+        <li>
+          <u>${indo11.new_heading1}</u>
+          <br />
+          <table style="font-size: 9pt; max-width: 100%;">
+            <tr class="bold1" style="background-color: red;">
+              <th style="color: white;">${indo11.2}<i>${indo11.3}</i></th>
+              <th style="color: white;">${indo11.4}<i>${indo11.5}</i></th>
+              <th style="color: white;">${indo11.6}<i>${indo11.7}</i></th>
+              <th style="color: white;">${indo11.8}<i>${indo11.9}</i></th>
+              <th style="color: white;">${indo11.10}<i>${indo11.11}</i></th>
+              <th style="color: white;">${indo11.12}<i>${indo11.13}</i></th>
+              <th style="color: white;">${indo11.14}<i>${indo11.15}</i></th>
+              <th style="color: white;">${indo11.16}<i>${indo11.17}</i></th>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </table>
+
+          <ul>
+            <li>${indo11.18}</li>
+            <li>${indo11.19}</li>
+          </ul>
+        </li>
+
+        <li>
+          <table style="font-size: 9pt;">
+            <tr class="bold1" style="background-color: red;">
+              <th class="width33" style="color: white;">
+                ${indo11.20}<br /><i>${indo11.21}</i>
+              </th>
+              <th class="width33" style="color: white;">
+                ${indo11.22}<br /><i>${indo11.23}</i>
+              </th>
+              <th class="width33" style="color: white;">
+                ${indo11.24}
+              </th>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </table>
+
+          <br />
+          <br />
+        </li>
+
+        <li>
+          <i><u>${indo11.3_ordered_list_1}</u></i>
+          <ol class="italic1 d">
+            <li>${indo11.3_ordered_list_2}</li>
+            <li>${indo11.3_ordered_list_3}</li>
+            <li>${indo11.3_ordered_list_4}</li>
+            <li>${indo11.3_ordered_list_5}</li>
+            <li>${indo11.3_ordered_list_6}</li>
+            <li>${indo11.3_ordered_list_7}</li>
+          </ol>
+        </li>
+        <li class="italic1">
+          <u>${indo11.3_ordered_list_8}</u>
+          <ol class="d">
+            <li>${indo11.3_ordered_list_9}</li>
+            <li>${indo12.1_ordered_list_10}</li>
+            <li>${indo12.1_ordered_list_11}</li>
+            <li>${indo12.1_ordered_list_12}</li>
+          </ol>
+        </li>
+        <li class="italic1">
+          <u>${indo12.1_ordered_list_13}</u>
+          <ol class="d">
+            <li>
+              ${indo12.1_ordered_list_14}
+            </li>
+          </ol>
+        </li>
+
+        <li>
+          <u>${indo12.1_ordered_list_15}</u>
+          <ol class="d">
+            <li>
+              ${indo12.1_ordered_list_16}
+              <ol class="f">
+                <li>${indo12.1_ordered_list_17}</li>
+                <li>${indo12.1_ordered_list_18}</li>
+                <li>${indo12.1_ordered_list_19}</li>
+                <li>${indo12.1_ordered_list_20}</li>
+                <li>${indo12.1_ordered_list_21}</li>
+                <li>${indo12.1_ordered_list_22}</li>
+                <li>${indo12.1_ordered_list_23}</li>
+              </ol>
+            </li>
+            <li>${indo12.1_ordered_list_24}</li>
+            <li>${indo12.1_ordered_list_25}</li>
+            <li>${indo12.1_ordered_list_26}</li>
+          </ol>
+        </li>
+      </ol>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <p class="s1" style="text-align:center;">
+        <u>${indo12.2_heading1}<br /><br />${indo12.2_heading2}</u>
+      </p>
+      <p class="s1">${signing_date}</p>
+      <p class="s1">${indo12.3_paragraph1}</p>
+      <p class="italic1 s1">${indo12.3_paragraph2}</p>
+      <p class="italic1 s1">${indo12.3_paragraph3}</p>
+      <br />
+      <table class="s1" style="font-size: 9pt;">
+        <tr>
+          <td class="width50">
+            ${indo13.1_table1}<br /><i>${indo13.1_table2}</i>
+          </td>
+          <td>
+            <p class="s1">${property_address}</p>
+          </td>
+        </tr>
+        <tr>
+          <td>${indo13.1_table3}<br />${indo13.1_table4}</td>
+          <td>
+            <p class="s1">${bank_details}</p>
+          </td>
+        </tr>
+        <tr>
+          <td>${indo13.1_table5}<br />${indo13.1_table6}</td>
+          <td>
+            <p class="s1">${beneficiary_name}</p>
+          </td>
+        </tr>
+        <tr>
+          <td>${indo13.1_table7}<br />${indo13.1_table8}</td>
+          <td>
+            <p class="s1">${beneficiary_address}</p>
+          </td>
+        </tr>
+        <tr>
+          <td>${indo13.1_table9}<br />${indo13.1_table10}</td>
+          <td>
+            <p class="s1">${bank_name}</p>
+          </td>
+        </tr>
+        <tr>
+          <td>${indo13.1_table11}<br />${indo13.1_table12}</td>
+          <td>
+            <p class="s1">${bank_address}</p>
+          </td>
+        </tr>
+        <tr>
+          <td>${indo13.1_table13}<br />${indo13.1_table14}</td>
+          <td>
+            <p class="s1">${account_no}</p>
+          </td>
+        </tr>
+        <tr>
+          <td>${indo13.1_table15}<br />${indo13.1_table16}</td>
+          <td>
+            <p class="s1">${account_type}</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            ${indo13.1_table17}
+          </td>
+          <td>
+            <p class="s1">${ifsc_code}</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            ${indo13.1_table18}
+          </td>
+          <td>
+            <p class="s1">${npwp}</p>
+          </td>
+        </tr>
+      </table>
+
+      <br />
+      <br />
+      <br />
+
+      <!-- page 14 -->
+      <p class="s1" style="text-align: center; color:red">
+        <b><u>${indo14.1_heading1}</u></b>
+      </p>
+      <p class="s1" style="text-align: center; color:red">
+        <b><u>${indo14.1_heading1}</u></b>
+      </p>
+      <br />
+      <br />
+      <p class="s1">${indo14.1_paragraph1}</p>
+      <ol class="d" style="font-size: 9pt;">
+        <li>${indo14.2_list1}</li>
+        <li>${indo14.2_list2}</li>
+        <li>${indo14.2_list3}</li>
+        <li>${indo14.2_list4}</li>
+        <li>${indo14.2_list5}</li>
+        <li>${indo14.2_list6}</li>
+        <li>${indo14.2_list7}</li>
+        <li>${indo14.2_list8}</li>
+      </ol>
+      <table style="font-size: 9pt;">
+        <tr>
+          <td rowspan="2" class="width25">
+            ${indo14.1_table1}<i>${indo14.1_table5}</i>
+          </td>
+          <td>
+            <ol class="d">
+              <li>${indo14.1_table2}</li>
+              <li>${indo14.1_table3}</li>
+              <li>${indo14.1_table4}</li>
+            </ol>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <ol class="d">
+              <li>${indo14.1_table6}</li>
+              <li>${indo14.1_table7}</li>
+              <li>${indo14.1_table8}</li>
+            </ol>
+          </td>
+        </tr>
+        <tr>
+          <td>${indo14.1_table9}<br />${indo14.1_table10}</td>
+          <td>${indo14.1_table11}<br />${indo14.1_table12}</td>
+        </tr>
+        <tr>
+          <td rowspan="2">${indo14.1_table13}<br />${indo14.1_table14}</td>
+          <td>
+            <ol class="d">
+              <li>${indo14.1_table15}</li>
+              <li>${indo14.1_table16}</li>
+            </ol>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <ol class="d">
+              <li>
+                ${indo14.1_table17}
+              </li>
+              <li>
+                ${indo14.1_table18}
+              </li>
+            </ol>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            ${indo14.1_table19}
+          </td>
+          <td>
+            <ol class="d">
+              <li>${indo14.1_table20}</li>
+              <li>${indo14.1_table21}</li>
+              <li>${indo14.1_table22}</li>
+              <li>${indo14.1_table23}</li>
+              <li>${indo14.1_table24}</li>
+            </ol>
+          </td>
+        </tr>
+        <tr>
+          <td>${indo14.1_updated1}<br /><b>${indo14.1_updated2}</b></td>
+          <td>
+            <ol class="d">
+              <li>${indo14.1_updated3}</li>
+              <li>${indo14.1_updated4}</li>
+              <li>${indo14.1_updated5}</li>
+              <li>${indo14.1_updated6}</li>
+              <li>${indo14.1_updated7}</li>
+            </ol>
+          </td>
+        </tr>
+      </table>
+
+      <br />
+      <br />
+    </div>
+
+    <!-- page 16 -->
+
+    <div class="s1">
+      <p class="s1" style="text-align: center;">
+        <b>
+          <u>
+            ${indo16.1_heading1}<br /><br />${indo16.1_heading2}<br /><br /><i
+              >${indo16.1_heading3}</i
+            >
+          </u>
+        </b>
+      </p>
+      <br />
+      <p class="s1">${indo16.2_paragraph1}</p>
+      <table class="sa1" style="font-size: 9pt;">
+        <tr style="background-color: red; text-align: left;">
+          <td style="color: white;">
+            <b>${indo16.3_table1}</b>
+            <br />
+            <b>${indo16.3_table2}</b>
+          </td>
+          <td style="color: white;">
+            <b>${indo16.3_table3}</b>
+            <br />
+            <b>${indo16.3_table4}</b>
+          </td>
+        </tr>
+        <tr>
+          <td>${indo16.3_table5}<br />${indo16.3_table6}</td>
+          <td>
+            <p class="s1">${vm_fire}</p>
+          </td>
+        </tr>
+        <tr>
+          <td>${indo16.3_table7}<br />${indo16.3_table8}</td>
+          <td>
+            <p class="s1">${vm_fire}</p>
+          </td>
+        </tr>
+        <tr>
+          <td>${indo16.3_table9}<br />${indo16.3_table10}</td>
+          <td>
+            <p class="s1">${vm_inventory}</p>
+          </td>
+        </tr>
+        <tr>
+          <td>${indo16.3_table11}<br />${indo16.3_table12}</td>
+          <td>
+            <p class="s1">${vm_ro}</p>
+          </td>
+        </tr>
+        <tr>
+          <td>${indo16.3_table13}<br />${indo16.3_table14}</td>
+          <td>
+            <p class="s1">${vm_dustbin}</p>
+          </td>
+        </tr>
+        <tr>
+          <td>${indo16.3_table15}<br />${indo16.3_table16}</td>
+          <td>
+            <p class="s1">${vm_mattress}</p>
+          </td>
+        </tr>
+      </table>
+     <br/><br/> 
+      <p class="s1">${indo16.3_table17}</p>
+      <table style="font-size: 9pt;">
+        <tr style="background-color: red;">
+          <td style="color: white;">
+            <b>${indo16.3_table18}</b><br /><b>${indo16.3_table19}</b>
+          </td>
+          <td style="color: white;">
+            <b>${indo16.3_table20}</b><br /><b>${indo16.3_table21}</b>
+          </td>
+        </tr>
+        <tr>
+          <td>${indo16.3_table22}<br /><i>${indo16.3_table23}</i></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>${indo16.3_table24}<br /><i>${indo16.3_table25}</i></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>${indo16.3_table26}<br /><i>${indo16.3_table27}</i></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>${indo16.3_table28}<br /><i>${indo16.3_table29}</i></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>${indo16.3_table30}<br /><i>${indo16.3_table31}</i></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>${indo16.3_table32}<br /><i>${indo16.3_table33}</i></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>${indo16.3_table34}<br /><i>${indo16.3_table35}</i></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
